@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Passion Page</title>
+  <link rel="stylesheet" href="MyPassion.css">
+</head>
+<body>
+  <div class="container" id="top">
+    <header class="site-header">
+      <div class="site-title">
+        <p style="margin:4px 0 0 0;">My Passion is... </p>
+        <h1 style="font-size: 50px; font-style: italic;">Impact</h1>
+      </div>
+
+      <nav aria-label="scratch navigation">
+        <a href="index.html">Back to Resume</a>
+        <a href="MentalBreakApp.html">Open App</a>
+        <a href="#list-section">Impact List</a>
+        <a href="#video">Inspirational Video</a>
+        <a href="#tableau">Tableau Visualizer</a>
+      </nav>
+    </header>
+
+    <!-- two equal boxes -->
+    <div class="row" role="region" aria-label="Top boxes">
+      <div class="box">
+        <div class="section-row">
+          <div class="section-heading">Definition</div>
+        </div>
+        <p>"A strong effect or influence that something has on a situation, person, or system."</p>
+      </div>
+
+      <div class="box">
+        <div class="section-row">
+          <div class="section-heading">My Definition</div>
+        </div>
+        <p>"The change I strive to make through my personal actions and contribution to the environments I interact with."</p>
+      </div>
+    </div>
+
+    <!-- image block with subtle highlight and framed image -->
+    <section class="highlight">
+      <div class="section-row">
+        <div class="section-heading">My Favorite impact--Family</div>
+      </div>
+
+      <div class="explore-card">
+        <img class="image-framed" src="C:\Users\isaac\OneDrive\Pictures\Camera Roll\IMG_20241012_094113959.jpg" alt="Family Impact">
+        <p style="margin-top:12px;color:var(--muted)">My proudest area of impact has been the positive influence I've had on my family.</p>
+      </div>
+    </section>
+
+    <!-- Exploration Plan with white explore-card -->
+    <section id="list-section" style="margin-top:18px">
+      <div class="section-row">
+        <div class="section-heading">Other Areas of Impact</div>
+      </div>
+
+      <div class="explore-card">
+        <ol>
+          <li>
+            On Campus Involvement
+            <ul>
+              <li>Christlike Leadership Initiative</li>
+              <li>Marriott School of Business</li>
+              <li>Grow the Flow Student Coalition</li>
+            </ul>
+          </li>
+          <li>Volunteer Work</li>
+          <li>Consultancy Work</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- embedded YouTube video -->
+    <section id="video" style="margin-top:18px;">
+      <div class="section-row">
+        <div class="section-heading">My Inspiration</div>
+      </div>
+
+      <div class="video-wrap" title="YouTube video" style="margin-top:12px;">
+        <iframe src="https://www.youtube.com/watch?v=xKfFJuXpeAw" allowfullscreen title="My Inspiration"></iframe>
+      </div>
+    </section>
+
+    <!-- Tableau public embed (interactive) - the "last section" with white content card -->
+    <section id="tableau" style="margin-top:18px;">
+      <div class="section-row">
+        <div class="section-heading">Unique Interest--Data Visualization</div>
+      </div>
+
+      <!-- the white card that contains the interactive viz -->
+      <div class="explore-card" style="margin-top:12px;">
+        <div style="color:var(--muted);margin-bottom:8px;font-weight:600">This is an interactive Tableau visualization that caught my interest.</div>
+        <div class="tableau-wrap">
+          <iframe src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms?:showVizHome=no&:embed=true" width="100%" height="520" frameborder="0" allowfullscreen title="Tableau viz"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p style="text-align:center;margin-top:28px;color:rgba(255,255,255,0.9)">© Isaac L. Hansen</p>
+    </footer>
+  </div>
+</body>
+</html>

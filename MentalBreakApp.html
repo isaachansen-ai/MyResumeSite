@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Number Guessing Game</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f6fbff}
+    .card{width:100%;max-width:520px;background:#fff;padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(12,24,56,0.08);text-align:center}
+    h1{margin:0 0 8px;color:#1151ba} p{color:#374151}
+    input[type=number]{padding:10px;border-radius:8px;border:1px solid #d1d5db;width:120px;text-align:center}
+    button{padding:10px 14px;border-radius:8px;border:none;background:#1151ba;color:white;font-weight:700;cursor:pointer;margin-left:8px}
+    a{display:inline-block;margin-top:12px;color:#1151ba}
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <h1>Guess the Number</h1>
+    <p>I'm thinking of a number between 1 and 100. Try to guess it in as few tries as possible.</p>
+
+    <div>
+      <input id="guess" type="number" min="1" max="100" placeholder="Your guess">
+      <button id="tryBtn">Guess</button>
+      <button id="resetBtn" style="background:#6bc1ff;margin-left:8px">Reset</button>
+    </div>
+
+    <div class="log" id="log" style="margin-top:12px;color:#333">Good luck!</div>
+
+    <a href="index.html">Back to My Resume Page</a>
+  </div>
+
+  <script>
+    (function(){
+      let secret = Math.floor(Math.random()*100)+1;
+      let tries = 0;
+      const log = document.getElementById('log');
+      const guessEl = document.getElementById('guess');
+
+      function check(){
+        const val = Number(guessEl.value);
+        if(!val || val < 1 || val > 100){ log.textContent = 'Enter a number between 1 and 100.'; return; }
+        tries++;
+        if(val === secret){ log.textContent = `Correct! ${secret} — you got it in ${tries} tries.`; }
+        else if(val < secret) log.textContent = `Too low. Try again. (${tries} tries)`;
+        else log.textContent = `Too high. Try again. (${tries} tries)`;
+      }
+
+      document.getElementById('tryBtn').addEventListener('click', check);
+      guessEl.addEventListener('keypress', function(e){ if(e.key === 'Enter') check(); });
+      document.getElementById('resetBtn').addEventListener('click', function(){
+        secret = Math.floor(Math.random()*100)+1;
+        tries = 0;
+        guessEl.value = '';
+        log.textContent = 'Game reset. New number chosen.';
+      });
+    })();
+  </script>
+</body>
+</html>
